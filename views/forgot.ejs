@@ -1,0 +1,45 @@
+
+<% include ./partials/header %>
+
+<div class="row justify-content-center">
+
+  <div class="col-md-12 col-sm-12 text-center">
+    <form class="form-signin" action="/forgot" method="post">
+
+      <div class="container">
+        <h2 class="mb-3 font-weight-normal">Forgot Password</h2>
+        <h1 id="require" class="h6 mb-3 font-weight-light">* Required</h1>
+      </div>
+
+    </div>
+    
+    
+    <div class="col-sm-12 col-md-8 col-lg-6">
+      
+      <div class="form-group">
+        <label for="editEmail" class="sr-only">Email</label>
+        <input type="email" id="editEmail" class="form-control" name="email" placeholder="Email*" 
+        title="Only Gmail Accounts. Email must be between 1 and 20 Letters, Numbers, and ."  pattern="([A-Za-z0-9-.]{1,20}@gmail.com)"  autofocus >
+      </div>
+
+
+      
+      <div class="form-group">
+        <button class="btn btn-lg btn-outline-primary btn-block">Submit</button>
+      </div>
+      
+      
+    </form>
+
+    <div class="form-group">
+      <a href="/campgrounds">Go Back</a>
+    </div>
+
+  </div> 
+  
+</div>
+
+
+
+<% include ./partials/footer %>
+

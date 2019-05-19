@@ -1,0 +1,51 @@
+
+<% include ./partials/header %>
+
+<div class="row justify-content-center">
+
+  <div class="col-md-12 col-sm-12 text-center">
+    <form class="form-signin" action="/reset/<%= token %>" method="POST">
+
+      <div class="container">
+        <h2 class="mb-3 font-weight-normal">Reset Password</h2>
+        <h1 id="require" class="h6 mb-3 font-weight-light">* Required</h1>
+      </div>
+
+    </div>
+    
+    
+    <div class="col-sm-12 col-md-8 col-lg-6">
+      
+      <div class="form-group">
+        <label for="editpassword" class="sr-only">Password</label>
+        <input type="password" id="editpassword" class="form-control" value="" name="password" placeholder="New Password*" 
+        title="Password must be between 4 and 15 digits long and include at least one numeric digit." pattern="^(?=.*\d).{4,15}$"  autofocus >
+      </div>
+      
+      <div class="form-group">
+        <label for="confirmpassword" class="sr-only">Password</label>
+        <input type="password" id="confirmpassword" class="form-control" value="" name="confirm" placeholder="Confirm Password*" 
+        title="Password must be between 4 and 15 digits long and include at least one numeric digit." pattern="^(?=.*\d).{4,15}$">
+      </div>
+
+
+      
+      <div class="form-group">
+        <button class="btn btn-lg btn-outline-primary btn-block">Submit</button>
+      </div>
+      
+      
+    </form>
+
+    <div class="form-group">
+      <a href="/campgrounds">Go Back</a>
+    </div>
+
+  </div> 
+  
+</div>
+
+
+
+<% include ./partials/footer %>
+

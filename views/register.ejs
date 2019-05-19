@@ -1,0 +1,82 @@
+<% include ./partials/header %>
+
+<div class="row justify-content-center">
+
+  <div class="col-md-12 col-sm-12 text-center">
+    <form class="form-signin" action="/register" method="post" enctype="multipart/form-data">
+      <div class="container">
+        <h2 class="mb-3 font-weight-normal">Sign Up</h2>
+        <h1 id="require" class="h6 mb-3 font-weight-light">* Required</h1>
+      </div>
+
+    </div>
+    
+    
+    <div class="col-sm-12 col-md-8 col-lg-6">
+    
+      <div class="form-group">
+        <label for="inpuUsername" class="sr-only">Username</label>
+        <input class="form-control"  id="inputUsername" type="text" 
+        name="username" placeholder="Username*" pattern="[A-Za-z0-9]{7,15}" title="Username Must Be Between 7 and 15 Letters. Can Have Numbers" required autofocus>
+      </div>
+      
+      <div class="form-group">
+        <label for="inputPassword" class="sr-only">Last Name</label>
+        <input class="form-control"  id="inputPassword" type="password" 
+        name="password" placeholder="Password*" 
+        title="Password must be between 4 and 15 digits long and include at least one numeric digit." pattern="^(?=.*\d).{4,15}$" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="inputFirstname" class="sr-only">First Name</label>
+        <input class="form-control"  id="inputFirstname" type="text" 
+        name="firstname" placeholder="First Name*" pattern="[A-Za-z ]{3,15}" title="First Name Must Be Between 3 and 15 Letters" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="inputLastname" class="sr-only">Last Name</label>
+        <input class="form-control"  id="inputLastname" type="text" 
+        name="lastname" placeholder="Last Name*" pattern="[A-Za-z ]{3,15}" title="Last Name Must Be Between 3 and 15 Letters" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="inputEmail" class="sr-only">Email</label>
+        <input type="email" id="inputEmail" class="form-control" name="email" placeholder="Email*" 
+        title="Only Gmail Accounts. Email must be between 1 and 20 Letters. Can Have Numbers and ."  pattern="([A-Za-z0-9-.]{1,20}@gmail.com)"  required>
+      </div>
+
+      <div class="form-group">
+        <label for="editImage" class="sr-only">Image</label>
+        <input type="file" id="editImage" name="image"  accept="image/*"  title="Image Must Be an JPG or PNG" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="inputDescription" class="sr-only">Description</label>
+        <input class="form-control" type="text" id="inputDescription"  name="description" 
+        placeholder="Give A Description About Yourself..." title="Describe Yourself">
+      </div>
+      
+      <div class="form-group">
+        <label for="inputAdmin" class="sr-only">Admin Code</label>
+        <input class="form-control" type="text" id="inputAdmin"  name="adminCode"
+        placeholder="Admin Only" title="Need Special Code">
+      </div>
+    
+      
+      
+      <div class="form-group">
+        <button class="btn btn-lg btn-outline-primary btn-block">Submit</button>
+      </div>
+      
+      
+    </form>
+
+    <div class="form-group">
+      <a href="/campgrounds">Go Back</a>
+    </div>
+
+  </div> 
+  
+</div>
+ 
+<% include ./partials/footer %>

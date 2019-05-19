@@ -1,0 +1,54 @@
+<% include ../partials/header %>
+
+<div class="row"> 
+  <div class="col-md-4 mb-3">
+    <div class="card bg-light">
+      <img class="card-img-top"  src="<%= user.image %>" alt="user profile image">
+      <div class="card-body">
+        <p class="mt-2"> Name <br><%= user.firstName + " " + user.lastName %></p>
+        <p>Email <br><a href="mailto:<%= user.email %>"><%= user.email %></a></p>
+        <p>About Me <br><%= user.description %></p>
+      </div>
+      <div class="card-text pl-3 pb-2 mb-2">
+        <% if(currentUser && user._id.equals(currentUser._id) || currentUser && currentUser.isAdmin){ %>
+        <a class="btn btn-warning btn-sm" href="/users/<%= user._id %>/edit">Edit</a>
+        <form action="/users/<%= user._id %>?_method=DELETE" method="POST" class="delete-form">
+          <button class="btn btn-danger btn-sm">Delete</button>
+        </form>
+        <a class="btn btn-secondary btn-sm" href="/forgot">Change Password</a>
+
+        <% } %>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-8">
+    <div class="card bg-light p-2 mb-2 text-center">  
+      <h4>Campground Posts</h4>
+    </div>
+    
+    <div class="row text-center fixbox">
+     <% campgrounds.reverse().forEach(function(campground){  %>
+     <div class="col-lg-4 col-md-4 col-md-6 mb-4">
+      <div class="card">
+        <img class="card-img-top" src="<%= campground.image %>" alt="<%= campground.name.substring(0,16) %>">
+        <div class="card-body">
+          <h5 class="card-title"><%= campground.name.substring(0,16) %></h5>
+          <a href="/campgrounds/<%= campground._id %>" class="btn btn-primary">More Info</a>
+        </div>
+      </div>
+    </div>
+    <% }); %>       
+  </div>     
+</div>
+
+
+
+</div>
+
+
+
+
+
+</div>
+
+<% include ../partials/footer %>

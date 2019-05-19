@@ -1,0 +1,55 @@
+<% include ../partials/header %>
+
+<div class="row justify-content-center">
+
+  <div class="col-md-12 col-sm-12 text-center">
+    <form class="form-signin" action="/campgrounds" method="POST" enctype="multipart/form-data">
+
+      <div class="container">
+        <h2 class="mb-3 font-weight-normal">New Background <br/>
+          <span id="require" class="h6 mb-3 font-weight-light">* Required</span></h2>
+        </div>
+
+      </div>
+
+      <div class="col-sm-12 col-md-8 col-lg-6">
+
+        <div class="form-group">
+          <label for="inputCampgroundname" class="sr-only">Campground Name</label>
+          <input class="form-control" id="inputCampgroundname" type="text" 
+          name="campground[name]" placeholder="Campground Name*" pattern="[a-zA-Z0-9\s]{5,20}" 
+          title="Campground Name Must Be between 5 and 20 Letters. Can Have Numbers" required autofocus>
+        </div>
+
+        <div class="form-group">
+          <label for="inputPrice" class="sr-only">Price</label>
+          <input class="form-control" id="inputPrice" type="number"
+          name="campground[price]" placeholder="Price*"  min="0.01" step="0.01" required>
+        </div>
+
+        <div class="form-group">
+          <label for="inputImage" class="sr-only">Image</label>
+          <input type="file" id="inputImage" name="image"  accept="image/*"  title="Image Must Be an JPG or PNG" required>
+        </div>
+
+        <div class="form-group">
+          <label for="inputDescription" class="sr-only">Description</label>
+          <input class="form-control" type="text" id="inputDescription" name="campground[description]" 
+          placeholder="Description...*" title="Give A Description To The Campground" required>
+        </div>
+
+
+        <div class="form-group">
+          <button class="btn btn-lg btn-outline-primary btn-block">Submit</button>
+        </div>
+      </form>
+
+      <div class="form-group">
+        <a href="/campgrounds">Go Back</a>
+      </div>
+
+    </div> 
+  </div>
+
+
+  <% include ../partials/footer %>

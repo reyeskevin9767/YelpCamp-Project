@@ -1,0 +1,63 @@
+<% include ../partials/header %>
+
+<div class="row justify-content-center">
+
+  <div class="col-md-12 col-sm-12 text-center">
+    <form class="form-signin" action="/users/<%=user._id%>?_method=PUT" method="post" enctype="multipart/form-data">
+
+      <div class="container">
+        <h2 class="mb-3 font-weight-normal">Edit Profile</h2>
+      </div>
+
+    </div>
+    
+    
+    <div class="col-sm-12 col-md-8 col-lg-6">
+
+      <div class="form-group">
+        <label for="editFirstname" class="sr-only">First Name</label>
+        <input class="form-control"  id="inputFirstname" type="text" 
+        name="firstname" value="<%=user.firstName %>" pattern="[A-Za-z ]{3,15}" title="First Name Must Be Between 3 and 15 Letters" required autofocus>
+      </div>
+      
+      <div class="form-group">
+        <label for="editLastname" class="sr-only">Last Name</label>
+        <input class="form-control"  id="editLastname" type="text" 
+        name="lastname" value="<%=user.lastName %>" pattern="[A-Za-z ]{3,15}" title="Last Name Must Be Between 3 and 15 Letters" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="editEmail" class="sr-only">Email</label>
+        <input type="email" id="editEmail" class="form-control" name="email" value="<%=user.email %>" 
+        title="Only Gmail Accounts. Email Must Be Between 1 and 20 Letters. Can Have Numbers and . " 
+        pattern="([A-Za-z0-9-.]{1,20}@gmail.com)"  required>
+      </div>
+
+      <div class="form-group">
+        <label for="editImage" class="sr-only">Image</label>
+        <input type="file" id="editImage" name="image"  accept="image/*"  title="Image Must Be an JPG or PNG">
+      </div>
+      
+
+      <div class="form-group">
+        <label for="editDescription" class="sr-only">Description</label>
+        <input class="form-control" type="text" id="editDescription"  name="description" 
+        value="<%= user.description %>" title="Give A Description About Yourself">
+      </div>
+      
+      <div class="form-group">
+        <button class="btn btn-lg btn-outline-primary btn-block">Submit</button>
+      </div>
+      
+      
+    </form>
+
+    <div class="form-group">
+      <a href="/campgrounds">Go Back</a>
+    </div>
+
+  </div> 
+  
+</div>
+ 
+<% include ../partials/footer %>
